@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -177,6 +178,9 @@ public class MainActivity extends AppCompatActivity {
         public void onBindViewHolder(@NonNull ProductViewHolder holderB, int b) {
             final com.example.myapplication.model.MenuPengumumanPribadi menuPengumumanPribadi = MenuPengumumanPribadi.get(b);
             Glide.with(MainActivity.this).load(menuPengumumanPribadi.getThumbnail()).into(holderB.tumbnailpengumumanpribadi);
+            holderB.text_judul_pengumuman_pribadi.setText(menuPengumumanPribadi.getJudul_pengumuman());
+            holderB.text_isi_pengumuman_pribadi.setText(menuPengumumanPribadi.getIsi_pengumuman());
+            holderB.text_tgl_tayang_pengumuman_pribadi.setText(menuPengumumanPribadi.getTgl_tayang_pengumuman());
         }
 
         @Override
@@ -185,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         class ProductViewHolder extends RecyclerView.ViewHolder {
+            TextView text_judul_pengumuman_pribadi, text_isi_pengumuman_pribadi, text_tgl_tayang_pengumuman_pribadi;
             CardView cvPengumumanPribadi;
             ImageView tumbnailpengumumanpribadi;
 
@@ -192,6 +197,10 @@ public class MainActivity extends AppCompatActivity {
                 super(itemViewB);
                 cvPengumumanPribadi = itemViewB.findViewById(R.id.cvPengumumanPribadi);
                 tumbnailpengumumanpribadi = itemView.findViewById(R.id.tumbnailpengumumanpribadi);
+                text_judul_pengumuman_pribadi = itemViewB.findViewById(R.id.judulpengumumanPribadiTV);
+                text_isi_pengumuman_pribadi = itemViewB.findViewById(R.id.isipengumumanPribadiTV);
+                text_tgl_tayang_pengumuman_pribadi = itemViewB.findViewById(R.id.tgltayangpengumumanPribadiTV);
+
             }
         }
     }
