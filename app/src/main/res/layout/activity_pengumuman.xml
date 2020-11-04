@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -42,6 +43,15 @@
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="5dp"
+                    android:src="@drawable/menu"
+                    app:tint="@color/white"
+                    android:layout_alignParentEnd="true"/>
+
             </RelativeLayout>
 
         </RelativeLayout>
@@ -57,20 +67,33 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
-                    android:background="@drawable/detailpengumuman"/>
+                    android:background="@drawable/detailpengumumanfix"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pengumuman Umum"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:padding="15dp"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp">
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="-15dp" >
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvPengumumanumum"
@@ -94,6 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
@@ -178,6 +202,59 @@
                     android:textSize="15sp"/>
 
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:background="@drawable/berkaspengumuman"/>
+
+                <TextView
+                    android:id="@+id/judulpengumumanBerkas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Judul Pengumuman"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:padding="15dp"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-condensed"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="-15dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleviewberkaspengumuman"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/activity_berkas_pengumuman">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 

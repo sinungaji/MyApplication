@@ -24,7 +24,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Search"></activity>
+        <activity android:name=".berkaspengumuman.BerkasTypeFileDefault"></activity>
+        <activity android:name=".berkaspengumuman.BerkasTypeFileVideo" />
+        <activity android:name=".berkaspengumuman.BerkasTypeFileFoto" />
+        <activity android:name=".berkaspengumuman.BerkasTypeFilePdf" />
+        <activity android:name=".Search" />
         <activity android:name=".PengumumanActivity" />
         <activity android:name=".helper.WebView" />
         <activity android:name=".SpalshScreen">
