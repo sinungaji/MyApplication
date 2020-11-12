@@ -40,13 +40,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PengumumanActivity extends AppCompatActivity {
-    ArrayList<ModelBerkasPengumuman> ModelBerkasPengumuman;
+public class PengumumanPribadiActivity extends AppCompatActivity {
+    ArrayList<com.example.myapplication.model.ModelBerkasPengumuman> ModelBerkasPengumuman;
     RecyclerView recycleviewberkaspengumuman;
 
     private ImageView profileUser, imgBack, tumbnailpengumumanumum;
     private ProgressDialog pDialog;
-    String id_pengumuman, id_pengumuman_berkas;
+    String id_pengumuman;
 
     private TextView judulpengumumanInput, isipengumumanInput, tgltayangpengumumanInput, tglberakhirpengumumanInput;
     private TextView judulpengumumanBerkas;
@@ -58,13 +58,9 @@ public class PengumumanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pengumuman);
+        setContentView(R.layout.activity_pengumuman_pribadi_activity);
         Bundle bundle = getIntent().getExtras();
         id_pengumuman = bundle.getString("id_pengumuman");
-
-        Bundle bundleBerkas = getIntent().getExtras();
-        id_pengumuman_berkas = bundleBerkas.getString("id_pengumuman_berkas");
-
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -145,7 +141,7 @@ public class PengumumanActivity extends AppCompatActivity {
                         if (error.getErrorCode() == 400) {
                             try {
                                 JSONObject body = new JSONObject(error.getErrorBody());
-                                AlertDialog.Builder builder1 = new AlertDialog.Builder(PengumumanActivity.this);
+                                AlertDialog.Builder builder1 = new AlertDialog.Builder(PengumumanPribadiActivity.this);
                                 builder1.setMessage(body.optString("pesan"));
                                 builder1.setCancelable(false);
 
@@ -166,7 +162,7 @@ public class PengumumanActivity extends AppCompatActivity {
 
                         } else {
                             // error.getErrorDetail() : connectionError, parseError, requestCancelledError
-                            AlertDialog.Builder builder1 = new AlertDialog.Builder(PengumumanActivity.this);
+                            AlertDialog.Builder builder1 = new AlertDialog.Builder(PengumumanPribadiActivity.this);
                             builder1.setMessage("Jaringan sedang sibuk. Klik 'Ok', untuk menutup pesan ini!");
                             builder1.setCancelable(false);
 
@@ -232,7 +228,7 @@ public class PengumumanActivity extends AppCompatActivity {
                         if (error.getErrorCode() == 400) {
                             try {
                                 JSONObject body = new JSONObject(error.getErrorBody());
-                                AlertDialog.Builder builder1 = new AlertDialog.Builder(PengumumanActivity.this);
+                                AlertDialog.Builder builder1 = new AlertDialog.Builder(PengumumanPribadiActivity.this);
                                 builder1.setMessage(body.optString("pesan"));
                                 builder1.setCancelable(false);
 
@@ -253,7 +249,7 @@ public class PengumumanActivity extends AppCompatActivity {
 
                         } else {
                             // error.getErrorDetail() : connectionError, parseError, requestCancelledError
-                            AlertDialog.Builder builder1 = new AlertDialog.Builder(PengumumanActivity.this);
+                            AlertDialog.Builder builder1 = new AlertDialog.Builder(PengumumanPribadiActivity.this);
                             builder1.setMessage("Jaringan sedang sibuk. Klik 'Ok', untuk menutup pesan ini!");
                             builder1.setCancelable(false);
 
@@ -304,19 +300,16 @@ public class PengumumanActivity extends AppCompatActivity {
                         case "1":
                             Intent a = new Intent(mCtx, BerkasTypeFilePdf.class);
                             a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            a.putExtra("id_pengumuman_berkas", menu.getId_pengumuman_berkas());
                             mCtx.startActivity(a);
                             break;
                         case "2":
                             Intent b = new Intent(mCtx, BerkasTypeFileFoto.class);
                             b.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            b.putExtra("id_pengumuman_berkas", menu.getId_pengumuman_berkas());
                             mCtx.startActivity(b);
                             break;
                         case "3":
                             Intent c = new Intent(mCtx, BerkasTypeFileVideo.class);
                             c.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            c.putExtra("id_pengumuman_berkas", menu.getId_pengumuman_berkas());
                             mCtx.startActivity(c);
                             break;
                         default:
@@ -349,7 +342,7 @@ public class PengumumanActivity extends AppCompatActivity {
     }
 
     private void deklarasidata() {
-        Glide.with(PengumumanActivity.this).load(tumbnailpengumumanumumString).into(tumbnailpengumumanumum);
+        Glide.with(PengumumanPribadiActivity.this).load(tumbnailpengumumanumumString).into(tumbnailpengumumanumum);
         judulpengumumanInput.setText(judulpengumumanString);
         isipengumumanInput.setText(isipengumumanString);
         tgltayangpengumumanInput.setText(tgltayangpengumumanString);

@@ -24,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".berkaspengumuman.BerkasTypeFileDefault"></activity>
+        <activity android:name=".PengumumanPribadiActivity"></activity>
+        <activity android:name=".berkaspengumuman.BerkasTypeFileDefault" />
         <activity android:name=".berkaspengumuman.BerkasTypeFileVideo" />
         <activity android:name=".berkaspengumuman.BerkasTypeFileFoto" />
         <activity android:name=".berkaspengumuman.BerkasTypeFilePdf" />

@@ -16,16 +16,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.bumptech.glide.Glide;
+import com.example.myapplication.berkaspengumuman.BerkasTypeFileVideo;
 import com.example.myapplication.helper.Config;
 import com.example.myapplication.model.MenuPengumumanPribadi;
 import com.example.myapplication.helper.SessionManager;
@@ -39,7 +45,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     ArrayList<MenuPengumumanPribadi> MenuPengumumanPribadi;
     RecyclerView recyclerviewpengumumanpribadi;
 
@@ -47,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recycleviepengumumanumum;
 
     private ProgressDialog pDialog;
-    private ImageView profileUser, searchView;
+    private ImageView profileUser, searchView, imgMenu;
+
+    SessionManager session;
 
 
     @Override
@@ -58,7 +66,10 @@ public class MainActivity extends AppCompatActivity {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
 
+        session = new SessionManager(getApplicationContext());
+
         searchView = findViewById(R.id.imgSearch);
+        imgMenu = findViewById(R.id.img);
 
         recyclerviewpengumumanpribadi = findViewById(R.id.recycleviepengumumanpribadi);
         recycleviepengumumanumum = findViewById(R.id.recycleviepengumumanumum);
@@ -80,8 +91,6 @@ public class MainActivity extends AppCompatActivity {
         getDataPengumumanUmum();
     }
 
-
-
     private void actionButton() {
         searchView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +99,41 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        imgMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu optionmenu = new PopupMenu(MainActivity.this, view);
+                optionmenu.setOnMenuItemClickListener(MainActivity.this);
+                optionmenu.inflate(R.menu.optionmenu);
+                optionmenu.show();
+            }
+        });
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+//        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+        switch (item.getItemId()) {
+            case R.id.about:
+                // do your code
+//                Intent intent = new Intent(getApplicationContext(), BerkasTypeFileVideo.class);
+//                startActivity(intent);
+                return true;
+            case R.id.setting:
+                // do your code
+                return true;
+            case R.id.help:
+                // do your code
+                return true;
+            case R.id.logout:
+                // do your code
+                session.logoutUser();
+                finish();
+                return true;
+            default:
+                return false;
+        }
     }
 
     private void getDataPengumumanPribadi() {
@@ -205,6 +249,14 @@ public class MainActivity extends AppCompatActivity {
             holderB.text_judul_pengumuman_pribadi.setText(menuPengumumanPribadi.getJudul_pengumuman());
             holderB.text_isi_pengumuman_pribadi.setText(menuPengumumanPribadi.getIsi_pengumuman());
             holderB.text_tgl_tayang_pengumuman_pribadi.setText(menuPengumumanPribadi.getTgl_tayang_pengumuman());
+            holderB.cvPengumumanPribadi.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(MainActivity.this, PengumumanPribadiActivity.class);
+                    i.putExtra("id_pengumuman", menuPengumumanPribadi.getId_pengumuman());
+                    startActivity(i);
+                }
+            });
         }
 
         @Override
