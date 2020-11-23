@@ -1,4 +1,4 @@
-package com.example.myapplication.berkaspengumuman;
+package com.example.myapplication.berkaspengumumanpribadi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,13 +15,13 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.BitmapRequestListener;
 import com.example.myapplication.MainActivity;
-import com.example.myapplication.PengumumanActivity;
 import com.example.myapplication.PengumumanPribadiActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.berkaspengumuman.BerkasTypeFileFoto;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.material.snackbar.Snackbar;
 
-public class BerkasTypeFileFoto extends AppCompatActivity {
+public class BerkasPribadiTypeFileFoto extends AppCompatActivity {
     String data;
     LinearLayout lini;
     ProgressDialog dialog;
@@ -30,7 +30,7 @@ public class BerkasTypeFileFoto extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_berkas_type_file_foto);
+        setContentView(R.layout.activity_berkas_pribadi_type_file_foto);
         Intent intent = getIntent();
         data = intent.getStringExtra("file");
         lini = findViewById(R.id.lini);
@@ -38,12 +38,11 @@ public class BerkasTypeFileFoto extends AppCompatActivity {
         getBitmapFromURL();
         actionButton();
     }
-
     private void actionButton() {
 //        imgBack.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), PengumumanActivity.class);
+//                Intent intent = new Intent(getApplicationContext(), PengumumanPribadiActivity.class);
 //                startActivity(intent);
 //            }
 //        });
@@ -56,7 +55,7 @@ public class BerkasTypeFileFoto extends AppCompatActivity {
     }
 
     public void getBitmapFromURL() {
-        dialog = ProgressDialog.show(BerkasTypeFileFoto.this, "",
+        dialog = ProgressDialog.show(BerkasPribadiTypeFileFoto.this, "",
                 "Loading. Please wait...", true);
         AndroidNetworking.get(data)
                 .setPriority(Priority.MEDIUM)

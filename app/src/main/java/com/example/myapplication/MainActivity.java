@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     RecyclerView recycleviepengumumanumum;
 
     private ProgressDialog pDialog;
-    private ImageView profileUser, searchView, imgMenu;
+    private ImageView imgProfile, searchView, imgMenu;
 
     SessionManager session;
 
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         searchView = findViewById(R.id.imgSearch);
         imgMenu = findViewById(R.id.img);
+        imgProfile = findViewById(R.id.imgProfile);
 
         recyclerviewpengumumanpribadi = findViewById(R.id.recycleviepengumumanpribadi);
         recycleviepengumumanumum = findViewById(R.id.recycleviepengumumanumum);
@@ -109,23 +110,20 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 optionmenu.show();
             }
         });
+
+        imgProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ProfilActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
 //        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
         switch (item.getItemId()) {
-            case R.id.about:
-                // do your code
-//                Intent intent = new Intent(getApplicationContext(), BerkasTypeFileVideo.class);
-//                startActivity(intent);
-                return true;
-            case R.id.setting:
-                // do your code
-                return true;
-            case R.id.help:
-                // do your code
-                return true;
             case R.id.logout:
                 // do your code
                 session.logoutUser();
@@ -282,7 +280,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     private void getDataPengumumanUmum() {
-        pDialog.setMessage("Pengumuman Bawah ...");
+        pDialog.setMessage("Pengumuman Umum ...");
         MenuPengumumanUmum.clear();
         showDialog();
         AndroidNetworking.post(Config.url+"pengumuman/list")

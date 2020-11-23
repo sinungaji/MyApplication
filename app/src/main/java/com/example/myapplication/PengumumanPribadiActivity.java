@@ -30,6 +30,10 @@ import com.example.myapplication.berkaspengumuman.BerkasTypeFileDefault;
 import com.example.myapplication.berkaspengumuman.BerkasTypeFileFoto;
 import com.example.myapplication.berkaspengumuman.BerkasTypeFilePdf;
 import com.example.myapplication.berkaspengumuman.BerkasTypeFileVideo;
+import com.example.myapplication.berkaspengumumanpribadi.BerkasPribadiTypeFileDefault;
+import com.example.myapplication.berkaspengumumanpribadi.BerkasPribadiTypeFileFoto;
+import com.example.myapplication.berkaspengumumanpribadi.BerkasPribadiTypeFilePdf;
+import com.example.myapplication.berkaspengumumanpribadi.BerkasPribadiTypeFileVideo;
 import com.example.myapplication.helper.Config;
 import com.example.myapplication.model.ModelBerkasPengumuman;
 
@@ -283,7 +287,7 @@ public class PengumumanPribadiActivity extends AppCompatActivity {
         @Override
         public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
             LayoutInflater inflater = LayoutInflater.from(mCtx);
-            @SuppressLint("InflateParams") View view = inflater.inflate(R.layout.activity_berkas_pengumuman, null);
+            @SuppressLint("InflateParams") View view = inflater.inflate(R.layout.activity_berkas_pengumuman_pribadi_rc, null);
             return new ProductViewHolder(view);
         }
 
@@ -298,22 +302,25 @@ public class PengumumanPribadiActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     switch (menu.getType_file()) {
                         case "1":
-                            Intent a = new Intent(mCtx, BerkasTypeFilePdf.class);
+                            Intent a = new Intent(mCtx, BerkasPribadiTypeFilePdf.class);
                             a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            a.putExtra("file", menu.getFile());
                             mCtx.startActivity(a);
                             break;
                         case "2":
-                            Intent b = new Intent(mCtx, BerkasTypeFileFoto.class);
+                            Intent b = new Intent(mCtx, BerkasPribadiTypeFileFoto.class);
                             b.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            b.putExtra("file", menu.getFile());
                             mCtx.startActivity(b);
                             break;
                         case "3":
-                            Intent c = new Intent(mCtx, BerkasTypeFileVideo.class);
+                            Intent c = new Intent(mCtx, BerkasPribadiTypeFileVideo.class);
                             c.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            c.putExtra("file", menu.getFile());
                             mCtx.startActivity(c);
                             break;
                         default:
-                            Intent e = new Intent(mCtx, BerkasTypeFileDefault.class);
+                            Intent e = new Intent(mCtx, BerkasPribadiTypeFileDefault.class);
                             e.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             mCtx.startActivity(e);
                             break;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".berkaspengumuman.BerkasTypeFileVideo">
+    tools:context=".berkaspengumumanpribadi.BerkasPribadiTypeFilePdf">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:layout_toEndOf="@+id/imgBack"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center_vertical"
-                    android:text="Berkas Umum Video"
+                    android:text="Berkas Pribadi PDF"
                     android:textColor="@color/white"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -47,20 +47,26 @@
 
         </RelativeLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center">
+            android:layout_height="match_parent">
 
-            <VideoView
-                android:id="@+id/video"
+            <ProgressBar
+                android:id="@+id/pdfViewProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="250dp" />
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateBehavior="cycle"
+                android:visibility="gone" />
 
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-        </LinearLayout>
-
+        </RelativeLayout>
     </LinearLayout>
 
-</androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

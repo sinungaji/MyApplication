@@ -38,19 +38,11 @@
                     android:layout_toEndOf="@+id/imgBack"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center_vertical"
-                    android:text="Berkas Pengumuman Foto"
+                    android:text="Berkas Umum Foto"
                     android:textColor="@color/white"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/img"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_alignParentEnd="true"
-                    android:padding="5dp"
-                    android:src="@drawable/menu"
-                    app:tint="@color/white" />
 
             </RelativeLayout>
 
@@ -59,7 +51,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/lini">
 
 
             <LinearLayout
@@ -77,10 +70,10 @@
                     app:cardElevation="10dp"
                     app:cardUseCompatPadding="true">
 
-                    <ImageView
-                        android:id="@+id/tumbnailBerkas"
-                        android:layout_width="350dp"
-                        android:layout_height="400dp"
+                    <com.github.chrisbanes.photoview.PhotoView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:scaleType="centerCrop" />
 
                 </androidx.cardview.widget.CardView>

@@ -304,19 +304,19 @@ public class PengumumanActivity extends AppCompatActivity {
                         case "1":
                             Intent a = new Intent(mCtx, BerkasTypeFilePdf.class);
                             a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            a.putExtra("id_pengumuman_berkas", menu.getId_pengumuman_berkas());
+                            a.putExtra("file", menu.getFile());
                             mCtx.startActivity(a);
                             break;
                         case "2":
                             Intent b = new Intent(mCtx, BerkasTypeFileFoto.class);
                             b.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            b.putExtra("id_pengumuman_berkas", menu.getId_pengumuman_berkas());
+                            b.putExtra("file", menu.getFile());
                             mCtx.startActivity(b);
                             break;
                         case "3":
                             Intent c = new Intent(mCtx, BerkasTypeFileVideo.class);
                             c.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            c.putExtra("id_pengumuman_berkas", menu.getId_pengumuman_berkas());
+                            c.putExtra("file", menu.getFile());
                             mCtx.startActivity(c);
                             break;
                         default:

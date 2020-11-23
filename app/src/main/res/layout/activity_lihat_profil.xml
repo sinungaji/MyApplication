@@ -1,0 +1,434 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".user.LihatProfil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/merah">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="5dp"
+                    android:src="@drawable/back"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_toEndOf="@+id/imgBack"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:text="Informasi Akun"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvPengumumanumum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <ImageView
+                        android:id="@+id/fotoanggota"
+                        android:layout_width="350dp"
+                        android:layout_height="175dp"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Anggota"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/namaAnggotaET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/jenisKelaminET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tempat Lahir"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/tempatLahirET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Lahir"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/tanggalLahirET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NIK"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/nikET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat KTP"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/alamatKtpET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat Sekarang"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/alamatSekarangET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NPWP"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/npwpET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nomor Wa"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/nomorWaET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nomor Telp"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/nomorTelpET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gol Darah"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/golDarahET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pendidikan Terakhir"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/pendidikanTerakhirET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Masuk Kerja"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/tanggalMasukKerjaET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status Pernikahan"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/statusPernikahanET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status Kepegawaian"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/statusKepegawaianET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jenjang"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"/>
+
+                <TextView
+                    android:id="@+id/jenjangET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textview"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingBottom="20dp"
+                    android:textColor="@color/abuabu"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

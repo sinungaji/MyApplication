@@ -43,15 +43,6 @@
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/img"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:padding="5dp"
-                    android:src="@drawable/menu"
-                    app:tint="@color/white"
-                    android:layout_alignParentEnd="true"/>
-
             </RelativeLayout>
 
         </RelativeLayout>

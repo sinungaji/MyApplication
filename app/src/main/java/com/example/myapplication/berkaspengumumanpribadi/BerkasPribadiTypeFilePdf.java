@@ -1,30 +1,20 @@
-package com.example.myapplication.berkaspengumuman;
+package com.example.myapplication.berkaspengumumanpribadi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.example.myapplication.MainActivity;
-import com.example.myapplication.PengumumanActivity;
 import com.example.myapplication.PengumumanPribadiActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.helper.Config;
-import com.example.myapplication.model.ModelBerkasPengumuman;
+import com.example.myapplication.berkaspengumuman.BerkasTypeFilePdf;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnPageErrorListener;
@@ -35,17 +25,9 @@ import com.krishna.fileloader.listener.FileRequestListener;
 import com.krishna.fileloader.pojo.FileResponse;
 import com.krishna.fileloader.request.FileLoadRequest;
 
-import com.example.myapplication.model.ModelBerkasPengumuman;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.util.ArrayList;
 
-
-public class BerkasTypeFilePdf extends AppCompatActivity implements OnLoadCompleteListener, OnPageErrorListener {
+public class BerkasPribadiTypeFilePdf extends AppCompatActivity implements OnLoadCompleteListener, OnPageErrorListener {
     ProgressBar pdfViewProgressBar;
     public ProgressDialog pDialog;
     PDFView pdfView;
@@ -53,7 +35,7 @@ public class BerkasTypeFilePdf extends AppCompatActivity implements OnLoadComple
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_berkas_type_file_pdf);
+        setContentView(R.layout.activity_berkas_pribadi_type_file_pdf);
         pdfView= findViewById(R.id.pdfView);
         pdfViewProgressBar=findViewById(R.id.pdfViewProgressBar);
         pdfViewProgressBar.setVisibility(View.VISIBLE);
@@ -68,7 +50,7 @@ public class BerkasTypeFilePdf extends AppCompatActivity implements OnLoadComple
 //        imgBack.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), PengumumanActivity.class);
+//                Intent intent = new Intent(getApplicationContext(), PengumumanPribadiActivity.class);
 //                startActivity(intent);
 //            }
 //        });
@@ -111,9 +93,9 @@ public class BerkasTypeFilePdf extends AppCompatActivity implements OnLoadComple
                                             pdfView.fitToWidth(); // optionally pass page number
                                         }
                                     })
-                                    .scrollHandle(new DefaultScrollHandle(BerkasTypeFilePdf.this))
+                                    .scrollHandle(new DefaultScrollHandle(BerkasPribadiTypeFilePdf.this))
                                     .spacing(10) // in dp
-                                    .onPageError(BerkasTypeFilePdf.this)
+                                    .onPageError(BerkasPribadiTypeFilePdf.this)
                                     .load();
 
                         } catch (Exception e) {
@@ -125,7 +107,7 @@ public class BerkasTypeFilePdf extends AppCompatActivity implements OnLoadComple
                     public void onError(FileLoadRequest request, Throwable t) {
                         pdfViewProgressBar.setVisibility(View.GONE);
                         hideDialog();
-                        Toast.makeText(BerkasTypeFilePdf.this, "KONEKSI ANDA BURUK !", Toast.LENGTH_LONG).show();
+                        Toast.makeText(BerkasPribadiTypeFilePdf.this, "KONEKSI ANDA BURUK !", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
@@ -134,12 +116,12 @@ public class BerkasTypeFilePdf extends AppCompatActivity implements OnLoadComple
     @Override
     public void loadComplete(int nbPages) {
         pdfViewProgressBar.setVisibility(View.GONE);
-        Toast.makeText(BerkasTypeFilePdf.this, String.valueOf(nbPages), Toast.LENGTH_LONG).show();
+        Toast.makeText(BerkasPribadiTypeFilePdf.this, String.valueOf(nbPages), Toast.LENGTH_LONG).show();
     }
     @Override
     public void onPageError(int page, Throwable t) {
         pdfViewProgressBar.setVisibility(View.GONE);
-        Toast.makeText(BerkasTypeFilePdf.this, t.getMessage(), Toast.LENGTH_LONG).show();
+        Toast.makeText(BerkasPribadiTypeFilePdf.this, t.getMessage(), Toast.LENGTH_LONG).show();
         hideDialog();
     }
 
